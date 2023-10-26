@@ -1,0 +1,38 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    long long n, uc, max = -1, ap = 1;
+    
+    cin >> n;
+    
+    if(n == 0)
+    {
+        cout << 0 << " " << 1;
+    }
+    else
+    {
+    
+    while(n > 0)
+    {
+        uc = n % 10;
+        
+        if(uc > max)
+        {
+            max = uc;
+            ap = 1;
+        }
+        else if(uc == max)
+        {
+            ap ++;
+        }
+        
+        n = n / 10;
+    }
+    
+    cout << max << " " << ap;
+    }
+    return 0;
+}
